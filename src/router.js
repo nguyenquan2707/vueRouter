@@ -21,7 +21,7 @@ const routes = [
   },
   {
     // Nếu xem trong object $route sẽ thấy idDetail.
-    path: "/transactions/:idDetail",
+    path: "/transactions/:id",
     component: TransactionDetail,
   },
 ];
