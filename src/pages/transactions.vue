@@ -1,4 +1,4 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <h1>Overview page</h1>
+  <h1>Transaction Page.</h1>
 </template>

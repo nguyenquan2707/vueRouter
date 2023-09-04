@@ -6,12 +6,17 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // We'll talk about nested routes later.
 
 import Home from "./pages/home.vue";
+import Transactions from "./pages/transactions.vue";
 
 // 1
 const routes = [
   {
     path: "/",
     component: Home,
+  },
+  {
+    path: "/transaction",
+    component: Transactions,
   },
 ];
 

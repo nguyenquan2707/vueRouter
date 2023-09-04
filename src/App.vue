@@ -1,11 +1,18 @@
 <template>
+  <AppNav></AppNav>
   <!-- Thường sẽ đặt router-view trong app -->
   <router-view></router-view>
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+import Nav from "./components/Nav.vue";
+
 export default {
   name: "App",
+  components: {
+    AppNav: Nav,
+  },
 };
 </script>
 
