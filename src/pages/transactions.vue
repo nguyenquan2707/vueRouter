@@ -14,21 +14,13 @@ export default {
   components: {},
   data() {
     return {
-      transactions: [
-        {
-          id: 1,
-          name: "payment internet",
-        },
-        {
-          id: 2,
-          name: "momo payment",
-        },
-        {
-          id: 3,
-          name: "market payment",
-        },
-      ],
+      transactions: [],
     };
+  },
+  created() {
+    fetch("http://localhost:3000/transactions")
+      .then((response) => response.json())
+      .then((data) => (this.transactions = data));
   },
 };
 </script>

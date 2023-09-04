@@ -1,0 +1,14 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "name": "market",
+      "price": 120
+    }
+  ]
+}
