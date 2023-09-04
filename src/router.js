@@ -7,6 +7,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 import Home from "./pages/home.vue";
 import Transactions from "./pages/transactions.vue";
+import TransactionDetail from "./pages/transaction-detail.vue";
 
 // 1
 const routes = [
@@ -15,8 +16,13 @@ const routes = [
     component: Home,
   },
   {
-    path: "/transaction",
+    path: "/transactions",
     component: Transactions,
+  },
+  {
+    // Nếu xem trong object $route sẽ thấy idDetail.
+    path: "/transactions/:idDetail",
+    component: TransactionDetail,
   },
 ];
 
