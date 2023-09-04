@@ -8,6 +8,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "./pages/home.vue";
 import Transactions from "./pages/transactions.vue";
 import TransactionDetail from "./pages/transaction-detail.vue";
+import NotFound from "./pages/404.vue";
 
 // 1
 const routes = [
@@ -23,6 +24,15 @@ const routes = [
     // Nếu xem trong object $route sẽ thấy idDetail.
     path: "/transactions/:id",
     component: TransactionDetail,
+  },
+  {
+    path: "/ts",
+    component: Transactions,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "not-found",
+    component: NotFound,
   },
 ];
 
