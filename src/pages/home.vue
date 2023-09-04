@@ -6,14 +6,18 @@
 </template>
 
 <script>
+//ref() reactive reference.
+//Có nhiều chức năng từ vue, khai báo như vậy là dùng chỉ thằng ref.
+import { ref } from "vue";
 export default {
   setup() {
-    let firstName = "q";
+    //Ref<String> firstName;
+    let firstName = ref("q");
 
     function onChangeSomething() {
       // Sẽ không thay đổi firstName, vì ko có reactive như bên hàm data() cũ, vậy phải làm sao.?
-      firstName = "new Name";
-      console.log("hee...");
+      console.log(firstName); //https://ibb.co/VTcfpq4
+      firstName.value = "new Name";
     }
     return {
       firstName,
