@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -40,7 +40,7 @@ const routes = [
 // You can pass in additional options here, but let's
 // keep it simple for now.
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
