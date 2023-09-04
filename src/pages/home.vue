@@ -2,6 +2,7 @@
 <template>
   <h1>Overview page</h1>
   <h1>{{ firstName }}</h1>
+  <h1>{{ secondName }}</h1>
   <button v-on:click="onChangeSomething()">Click here to show log</button>
 
   <p>{{ car }}</p>
@@ -16,6 +17,12 @@ export default {
     //Ref<String> firstName;
     let firstName = ref("q");
 
+    //secondName là Proxy Object of RefImpl
+    let secondName = ref({
+      name: "Tra",
+      middleName: "Thanh",
+    });
+
     //car là Proxy object, vì vậy có thể truy cập nó trực tiếp mà
     // ko cần phải thông qua value như ref().
     let car = reactive({
@@ -29,9 +36,17 @@ export default {
       firstName.value = "new Name";
 
       car.name = "Winfast";
+
+      console.log(secondName);
+      //change secondName by new objects
+      secondName.value = {
+        name: "Tra New",
+        address: "Cam ranh",
+      };
     }
     return {
       firstName,
+      secondName,
       onChangeSomething,
       car,
     };
