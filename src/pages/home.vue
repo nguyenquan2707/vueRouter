@@ -12,15 +12,21 @@
 <script>
 //ref() reactive reference.
 //Có nhiều chức năng từ vue, khai báo như vậy là dùng chỉ thằng ref.
-import { computed, ref, reactive } from "vue";
+import { watch, computed, ref, reactive } from "vue";
 export default {
   setup() {
     const searchName = ref("");
     const employees = reactive(["quan", "duc", "kien"]);
 
-    const searchEmployees = computed(() =>
-      employees.filter((employee) => employee.includes(searchName.value))
-    );
+    const searchEmployees = computed(() => {
+      console.log(searchName.value);
+      return employees.filter((employee) =>
+        employee.includes(searchName.value)
+      );
+    });
+    watch(searchName, (newValue, oldValue) => {
+      console.log(newValue, oldValue);
+    });
 
     return { searchName, searchEmployees, employees };
   },
