@@ -10,13 +10,10 @@
 </template>
 
 <script>
-//ref() reactive reference.
-//Có nhiều chức năng từ vue, khai báo như vậy là dùng chỉ thằng ref.
 import { computed, ref, reactive } from "vue";
+//lifeCycle Hooks https://vuejs.org/api/composition-api-lifecycle.html
+//
 export default {
-  //Nếu không dùng props thì khai báo là setup(_, context) nghĩa là ko tính thằng props
-  //props là gì? props là thuộc tính của component này.
-  //context là gì? context là thằng đại diện cho component này.
   props: {
     theme: {
       type: String,
