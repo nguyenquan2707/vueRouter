@@ -12,21 +12,27 @@
 <script>
 //ref() reactive reference.
 //Có nhiều chức năng từ vue, khai báo như vậy là dùng chỉ thằng ref.
-import { watch, computed, ref, reactive } from "vue";
+import { computed, ref, reactive } from "vue";
 export default {
-  setup() {
+  //Nếu không dùng props thì khai báo là setup(_, context) nghĩa là ko tính thằng props
+  //props là gì? props là thuộc tính của component này.
+  //context là gì? context là thằng đại diện cho component này.
+  props: {
+    theme: {
+      type: String,
+      default: "light",
+      required: false,
+    },
+  },
+  setup(props, context) {
+    console.log(props);
+    console.log(context);
     const searchName = ref("");
     const employees = reactive(["quan", "duc", "kien"]);
 
-    const searchEmployees = computed(() => {
-      console.log(searchName.value);
-      return employees.filter((employee) =>
-        employee.includes(searchName.value)
-      );
-    });
-    watch(searchName, (newValue, oldValue) => {
-      console.log(newValue, oldValue);
-    });
+    const searchEmployees = computed(() =>
+      employees.filter((employee) => employee.includes(searchName.value))
+    );
 
     return { searchName, searchEmployees, employees };
   },
