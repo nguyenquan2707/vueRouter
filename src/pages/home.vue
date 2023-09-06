@@ -12,7 +12,7 @@
 <script>
 import { computed, ref, reactive } from "vue";
 //lifeCycle Hooks https://vuejs.org/api/composition-api-lifecycle.html
-//
+//Tất cả hook trở thành lắng nghe, dưới dạng callback function
 export default {
   props: {
     theme: {
