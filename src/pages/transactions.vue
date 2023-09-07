@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import useTransaction from "../use/fetchTransaction";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "transactions",
@@ -21,19 +21,8 @@ export default {
   setup() {
     //Tại sao sử dụng ref()? Bởi vì mình sẽ thay thế cái data cũ, thí dụ dữ liệu cũ là array rổng, lúc sau có
     //dữ liệu, mình gán nó bằng array mới.
-    const transactions = ref([]); // lúc ban đầu
-    const error = ref(null);
-    console.log(transactions, error);
 
-    const fetchAll = async () => {
-      const response = await fetch("http://localhost:3000/transactions");
-      //validate, check error here
-      if (!response.ok) {
-        throw new Error("error");
-      }
-      transactions.value = await response.json();
-      console.log(transactions.value.length);
-    };
+    const { transactions, fetchAll } = useTransaction();
 
     fetchAll();
 
